@@ -1,0 +1,2 @@
+# aliyunsdkcore
+Python3+
