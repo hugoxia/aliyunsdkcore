@@ -23,8 +23,8 @@ import sys
 
 parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,parentdir)
-from . import roa_signature_composer
-from . import sha_hmac1 as mac1
+import roa_signature_composer
+import sha_hmac1 as mac1
 from ..utils import parameter_helper as helper
 import urllib
 

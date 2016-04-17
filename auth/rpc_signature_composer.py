@@ -23,7 +23,7 @@ import sys
 
 parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, parentdir)
-from . import sha_hmac1 as mac1
+import sha_hmac1 as mac1
 import urllib
 from ..utils import parameter_helper as helper
 
@@ -63,7 +63,7 @@ def __compose_string_to_sign(method, queries):
 
 
 def __get_signature(string_to_sign, secret, signer=mac1):
-    return signer.get_sign_string(string_to_sign, secret + b'&')
+    return signer.get_sign_string(string_to_sign, secret + '&')
 
 
 def get_signed_url(params, ak, secret, accept_format, method, signer=mac1):
@@ -71,6 +71,6 @@ def get_signed_url(params, ak, secret, accept_format, method, signer=mac1):
     string_to_sign = __compose_string_to_sign(method, sign_params)
     signature = __get_signature(string_to_sign, secret, signer)
     sign_params['Signature'] = signature
-    url = '/?' + urllib.parse.urlencode(sign_params)
+    url = '/?' + urllib.urlencode(sign_params)
     return url
 

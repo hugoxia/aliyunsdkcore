@@ -26,7 +26,7 @@ sys.path.insert(0, parent_dir)
 from .profile import region_provider
 from .acs_exception import exceptions as exs
 from .acs_exception import error_code, error_msg
-from .Http.http_response import HttpResponse
+from .http.http_response import HttpResponse
 from .request import AcsRequest
 
 """
@@ -51,7 +51,7 @@ class AcsClient:
 		self.__max_retry_num = max_retry_time
 		self.__auto_retry = auto_retry
 		self.__ak = ak
-		self.__secret = secret.encode('utf-8')
+		self.__secret = secret
 		self.__region_id = region_id
 		self.__user_agent = user_agent
 		self.__port = port

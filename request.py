@@ -24,9 +24,9 @@ import sys
 
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,parent_dir)
-from .Http import protocol_type as PT
-from .Http import method_type as MT
-from .Http import format_type as FT
+from .http import protocol_type as PT
+from .http import method_type as MT
+from .http import format_type as FT
 from .auth import rpc_signature_composer as rpc_signer
 from .auth import roa_signature_composer as roa_signer
 from .auth import oss_signature_composer as oss_signer
